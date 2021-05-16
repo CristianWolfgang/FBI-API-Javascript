@@ -25,3 +25,5 @@ you can not access to fbi api by javascript, you should do it in a backend langu
 you may pass id as param, it will return the criminal with that id.
 
 you may also search by race, eyecolor and sex
+
+be free of make a pull request.
