@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const getMostWanted = async ()=>{
+			try{
+				let res = await fetch("fbi-api.php?id=158e42deee764ce18ad6cd276f1f725d");
+				//fetch single criminal
+				if(!res.ok) throw "Error: unknow";
+				res = await res.json();
+				console.log(res);
+
+
+				res = await fetch("http://localhost/fbi-api/fbi-api.php");
+				res = await res.json();
+				console.log(res);
+				//fetch the most wanted
+
+				res = await fetch("http://localhost/fbi-api/fbi-api.php?page=2&pageSize=10");
+				res = await res.json();
+				console.log(res);
+				//fetch the page 2 and 10 items
+			}catch(err){
+				console.error(err);
+			}
+		};
+		getMostWanted();
+	</script>
+</body>
+</html>
